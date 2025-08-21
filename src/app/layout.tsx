@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import MiniHeader from "@/components/MiniHeader";
+import Footer from "@/components/Footer";
 
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
         <MiniHeader />
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
