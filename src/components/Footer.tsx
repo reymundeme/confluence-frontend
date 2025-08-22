@@ -4,11 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-    const iconClass = "text-white text-lg hover:text-gray-300 transition-colors";
-
+    const iconClass = "text-black text-3xl hover:text-gray-300 transition-colors mt-6";
 
     return (
-        <div className="flex w-full bg-white px-96 py-12 flex flex-col text-black">
+        <div className="flex w-full bg-white px-6 lg:px-20 xl:px-92 py-12 flex flex-col text-black">
 
             {/* Logo */}
             <div className=" items-center mb-8">
@@ -24,11 +23,12 @@ export default function Footer() {
             </div>
 
             {/* Columns wrapper */}
-            <div className="flex w-full gap-8 py-8 border-b-2 border-[#34464b]">
+            <div className="grid w-full gap-8 py-4 border-b-2 border-[#34464b] 
+                            grid-cols-2 md:grid-cols-4">
 
                 {/* Column 1 */}
-                <div className="w-full text-lg">
-                    <h6>Mon-Fri: 9:00 AM - 5:00 PM</h6>
+                <div className="w-full order-3 md:order-1 text-xl">
+                    <h6 className="">Mon-Fri: 9:00 AM - 5:00 PM</h6>
                     <h6>Sat-Sun: Closed</h6>
                     <br />
 
@@ -36,18 +36,18 @@ export default function Footer() {
                         href="https://www.google.com/maps/place/Confluence+Local+Marketing/@41.8052949,-88.2019069,17z"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-lg"
+                        className="text-xl"
                     >
                         2020 Calamos Ct, Naperville, IL 60563, United States
                     </Link>
                     <br />
 
-                    <h6 className="text-lg">630.447.8434</h6>
+                    <h6 className="text-xl mt-4">630.447.8434</h6>
                     <br />
 
-                    <h6 className="text-lg mb-4">SOCIAL NETWORKS</h6>
+                    <h6 className="mt-6">SOCIAL NETWORKS</h6>
 
-                    <div className="flex space-x-3">
+                    <div className="flex space-x-3 mb-4">
                         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                             <FaFacebookF className={iconClass} />
                         </a>
@@ -64,32 +64,32 @@ export default function Footer() {
                 </div>
 
                 {/* Column 2 */}
-                <div className="w-1/4 flex flex-col space-y-2">
-                    <h6 className="text-xl font-semibold mb-10">Services</h6>
-                    <Link href="/services/local-seo">Local SEO</Link>
-                    <Link href="/services/technical-seo">Technical SEO</Link>
-                    <Link href="/services/GEO">GEO</Link>
-                    <Link href="/services/AIO">AIO</Link>
-                    <Link href="/services/youtube-seo">Youtube SEO</Link>
+                <div className="md:w-1/2 flex flex-col md:space-y-2 md:mx-auto order-1 md:order-2">
+                    <h6 className="text-2xl font-semibold mb-10 ">Services</h6>
+                    <Link href="/services/local-seo" className="font-medium">Local SEO</Link>
+                    <Link href="/services/technical-seo" className="font-medium">Technical SEO</Link>
+                    <Link href="/services/GEO" className="font-medium">GEO</Link>
+                    <Link href="/services/AIO" className="font-medium">AIO</Link>
+                    <Link href="/services/youtube-seo" className="font-medium">Youtube SEO</Link>
                 </div>
 
                 {/* Column 3 */}
-                <div className="w-1/2 flex flex-col space-y-2 ml-12">
-                    <h6 className="text-xl font-semibold mb-10">Useful Links</h6>
-                    <Link href="/">Meet the team</Link>
-                    <Link href="/">Review Us</Link>
-                    <Link href="/">Contact Us</Link>
+                <div className="md:w-1/2 flex flex-col md:space-y-2 md:mx-auto order-2 md:order-3">
+                    <h6 className="text-2xl font-semibold mb-10">Useful Links</h6>
+                    <Link href="/" className="font-medium">Meet the team</Link>
+                    <Link href="/" className="font-medium">Review Us</Link>
+                    <Link href="/" className="font-medium">Contact Us</Link>
                 </div>
 
                 {/* Column 4 */}
-                <div className="flex flex-col space-y-2">
-                    <h6 className="text-xl font-semibold mb-10">Company</h6>
-                    <p>Companies around the U.S.A use Confluence Local Marketing to manage their marketing, reputation, Schema, social media, and SEO.</p>
+                <div className="flex flex-col space-y-2 order-4 md:order-3">
+                    <h6 className="text-2xl font-semibold mb-10">Company</h6>
+                    <p className="font-medium">Companies around the U.S.A use Confluence Local Marketing to manage their marketing, reputation, Schema, social media, and SEO.</p>
                 </div>
             </div>
 
             {/* copyright */}
-            <span className="mt-12 text-sm">Copyright © 2025 Confluence Local Marketing . All rights reserved.</span>
+            <span className="mt-8 text-md">Copyright © 2025 Confluence Local Marketing . All rights reserved.</span>
         </div>
     )
 }
