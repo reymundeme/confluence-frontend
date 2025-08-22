@@ -16,7 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={`lg:pr-60 bg-white shadow-md px-10 py-5 ${montserrat.variable}`}>
+    <nav className={`sticky top-0 z-50 lg:pr-60 bg-white shadow-md px-10 py-5 ${montserrat.variable}`}>
       <div className="w-full px-4 sm:px-6">
         <div className="flex justify-between h-16">
 
@@ -29,6 +29,7 @@ export default function Navbar() {
                 width={240}
                 height={40}
                 priority
+                className="h-12 w-auto sm:h-14 md:h-16 lg:h-18"
               />
             </Link>
           </div>
