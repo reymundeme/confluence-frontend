@@ -17,7 +17,7 @@ export default function LogoScroller() {
   return (
     <>
       <RealCostumerRealGrowth />
-    <div className="overflow-hidden relative w-full h-full flex bg-white py-18">
+    <div className="overflow-hidden relative w-full bg-white mx-auto h-full flex py-18">
 
        {/* Gradient overlay left */}
       <div className="absolute left-0 top-0 w-20 lg:w-50 h-full bg-gradient-to-r from-white to-transparent z-10"/>
