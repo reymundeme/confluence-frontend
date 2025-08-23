@@ -89,7 +89,7 @@ export default function Footer() {
             </div>
 
             {/* copyright */}
-            <span className="whitespace-nowrap mt-8 text-md">Copyright © 2025 Confluence Local Marketing . All rights reserved.</span>
+            <span className="mt-8 text-md mx-4">Copyright © 2025 Confluence Local Marketing . All rights reserved.</span>
         </div>
     )
 }
