@@ -19,10 +19,7 @@ export default function RealCostumerRealGrowth() {
                     <button className="rounded-full bg-[#267b9a] text-md text-white mx-2 px-18 py-3 shadow-xl/30">
                         REQUEST A DEMO
                     </button>
-
-
                 </div>
-
             </div>
         </div>
     );
