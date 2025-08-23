@@ -65,20 +65,20 @@ export default function Footer() {
 
                 {/* Column 2 */}
                 <div className="md:w-1/2 flex flex-col md:space-y-2 md:mx-auto order-1 md:order-2">
-                    <h6 className="text-2xl font-semibold mb-10 ">Services</h6>
-                    <Link href="/services/local-seo" className="font-medium">Local SEO</Link>
-                    <Link href="/services/technical-seo" className="font-medium">Technical SEO</Link>
-                    <Link href="/services/GEO" className="font-medium">GEO</Link>
-                    <Link href="/services/AIO" className="font-medium">AIO</Link>
-                    <Link href="/services/youtube-seo" className="font-medium">Youtube SEO</Link>
+                    <h6 className="whitespace-nowrap text-2xl font-semibold mb-10 ">Services</h6>
+                    <Link href="/services/local-seo" className="whitespace-nowrap font-medium">Local SEO</Link>
+                    <Link href="/services/technical-seo" className="whitespace-nowrap font-medium">Technical SEO</Link>
+                    <Link href="/services/GEO" className="whitespace-nowrap font-medium">GEO</Link>
+                    <Link href="/services/AIO" className="whitespace-nowrap font-medium">AIO</Link>
+                    <Link href="/services/youtube-seo" className="whitespace-nowrap font-medium">Youtube SEO</Link>
                 </div>
 
                 {/* Column 3 */}
                 <div className="md:w-1/2 flex flex-col md:space-y-2 md:mx-auto order-2 md:order-3">
                     <h6 className="text-2xl font-semibold mb-10">Useful Links</h6>
-                    <Link href="/" className="font-medium">Meet the team</Link>
-                    <Link href="/" className="font-medium">Review Us</Link>
-                    <Link href="/" className="font-medium">Contact Us</Link>
+                    <Link href="/" className="whitespace-nowrap font-medium">Meet the team</Link>
+                    <Link href="/" className="whitespace-nowrap font-medium">Review Us</Link>
+                    <Link href="/" className="whitespace-nowrap font-medium">Contact Us</Link>
                 </div>
 
                 {/* Column 4 */}
@@ -89,7 +89,7 @@ export default function Footer() {
             </div>
 
             {/* copyright */}
-            <span className="mt-8 text-md">Copyright © 2025 Confluence Local Marketing . All rights reserved.</span>
+            <span className="whitespace-nowrap mt-8 text-md">Copyright © 2025 Confluence Local Marketing . All rights reserved.</span>
         </div>
     )
 }
