@@ -16,7 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={`sticky top-0 z-50 lg:pr-60 bg-white shadow-md px-10 py-5 ${montserrat.variable}`}>
+    <nav className={`sticky top-0 z-50 2xl:pr-60 bg-white shadow-md px-10 py-5 ${montserrat.variable}`}>
       <div className="w-full px-4 sm:px-6">
         <div className="flex justify-between h-16">
 
@@ -29,7 +29,7 @@ export default function Navbar() {
                 width={240}
                 height={40}
                 priority
-                className="h-12 w-auto sm:h-14 md:h-16 lg:h-18"
+                className="h-12 w-auto sm:h-14 2xl:h-16"
               />
             </Link>
           </div>
@@ -41,53 +41,61 @@ export default function Navbar() {
 
             {/* SERVICES Dropdown */}
             <div className="group relative">
-              <button className="whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300">
-                SERVICES
-                <span className="ml-3 transition-transform duration-300 group-hover:rotate-180">
-                  {/* <ChevronDownIcon className="group-hover:hidden"/>
-                  <ChevronUpIcon className="hidden group-hover:inline"/> */}
+              <button className="flex items-center whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300 group">
+                 <span>SERVICES</span>
+                <span className="ml-2 flex items-center transition-transform duration-300 group-hover:rotate-180">
+                  <ChevronDownIcon className="group-hover:hidden w-5 h-5"/>
+                  <ChevronUpIcon className="hidden group-hover:inline w-5 h-5"/>
                 </span>
               </button>
 
               {/* SERVICES Dropdown Group */}
               <div className="absolute left-0 top-full z-10 hidden group-hover:flex flex-col bg-[#267b9a] shadow-md min-w-[280px] text-white">
-                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Programming SEO</Link>
-                <Link href="/services/generative" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Generative</Link>
-                <Link href="/services/link-building" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Link Building</Link>
-                <Link href="/services/ai-youtube" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">AI YouTube</Link>
-                <Link href="/services/ai-optimization" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Artificial Intelligence Optimization</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Rank Tracking</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Name, Adress, Places, MAPS, Directions - Listenings</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">GBP Reputation Management & Review Removal</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Schema / Structured Data / AI Rich Snippets</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">AI Content Development & Google Ranking</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Website Design And Development</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Social Media Creative And Posting</Link>
+                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Programming SEO</Link>
+                <Link href="/services/generative" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Generative</Link>
+                <Link href="/services/link-building" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Link Building</Link>
+                <Link href="/services/ai-youtube" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">AI YouTube</Link>
+                <Link href="/services/ai-optimization" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Artificial Intelligence Optimization</Link>
+                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Rank Tracking</Link>
+                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Name, Adress, Places, MAPS, Directions - Listenings</Link>
+                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">GBP Reputation Management & Review Removal</Link>
+                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Schema / Structured Data / AI Rich Snippets</Link>
+                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">AI Content Development & Google Ranking</Link>
+                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Website Design And Development</Link>
+                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Social Media Creative And Posting</Link>
               </div>
             </div>
 
             {/* MEET THE TEAM Dropdown */}
             <div className="group relative">
-              <button className="whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300">
-                MEET THE TEAM
+               <button className="flex items-center whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300 group">
+                 <span>MEET THE TEAM</span>
+                <span className="ml-2 flex items-center transition-transform duration-300 group-hover:rotate-180">
+                  <ChevronDownIcon className="group-hover:hidden w-5 h-5"/>
+                  <ChevronUpIcon className="hidden group-hover:inline w-5 h-5"/>
+                </span>
               </button>
 
               {/* MEET THE TEAM Dropdown Group */}
               <div className="absolute left-0 top-full z-10 hidden group-hover:flex flex-col bg-[#267b9a] shadow-md min-w-[280px] text-white">
-                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Review Us</Link>
+                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Review Us</Link>
               </div>
             </div>
 
 
             {/* RESULTS Dropdown */}
             <div className="group relative">
-              <button className="whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300">
-                RESULTS
+               <button className="flex items-center whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300 group">
+                 <span>RESULTS</span>
+                <span className="ml-2 flex items-center transition-transform duration-300 group-hover:rotate-180">
+                  <ChevronDownIcon className="group-hover:hidden w-5 h-5"/>
+                  <ChevronUpIcon className="hidden group-hover:inline w-5 h-5"/>
+                </span>
               </button>
 
               {/* RESULTS Dropdown Group */}
               <div className="absolute left-0 top-full z-10 hidden group-hover:flex flex-col bg-[#267b9a] shadow-md min-w-[280px] text-white">
-                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#267b9a] hover:text-white p-3 border-b">Contact Us</Link>
+                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Contact Us</Link>
               </div>
             </div>
 

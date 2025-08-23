@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+   images: {
+    domains: ["irp.cdn-website.com"], // ✅ allow this domain
+  },
 };
 
 export default nextConfig;

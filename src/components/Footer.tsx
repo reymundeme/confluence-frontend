@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-    const iconClass = "text-black text-3xl hover:text-gray-300 transition-colors mt-6";
+    const iconClass = "text-white text-3xl hover:text-gray-300 transition-colors mt-6";
 
     return (
-        <div className="flex w-full bg-white px-6 lg:px-20 xl:px-92 py-12 flex flex-col text-black">
+        <div className="flex w-full bg-[#333] px-6 lg:px-20 xl:px-92 py-12 flex flex-col text-white">
 
             {/* Logo */}
             <div className=" items-center mb-8">
