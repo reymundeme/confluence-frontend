@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Montserrat } from "next/font/google";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
-
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -14,12 +13,28 @@ const montserrat = Montserrat({
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [pages, setPages] = useState<any[]>([]);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    async function fetchPages() {
+      try {
+        const res = await fetch("http://localhost:1337/api/pages");
+        const data = await res.json();
+        setPages(data.data || []);
+      } catch (err) {
+        console.error("Failed to fetch pages:", err);
+      }
+    }
+    fetchPages();
+  }, []);
 
   return (
-    <nav className={`sticky top-0 z-50 2xl:pr-60 bg-white shadow-md px-10 py-5 ${montserrat.variable}`}>
+    <nav
+      className={`sticky top-0 z-50 2xl:pr-60 bg-white shadow-md px-10 py-5 ${montserrat.variable}`}
+    >
       <div className="w-full px-4 sm:px-6">
         <div className="flex justify-between h-16">
-
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-blue-600">
@@ -36,73 +51,25 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6 relative">
-            <Link href="/" className="whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300">HOME</Link>
-            <Link href="/about" className="whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300">TECHNICAL SEO</Link>
+            {pages.map((page) => {
+              const slug = page.Slug === "home" ? "/" : `/${page.Slug}`;
+              const isActive = pathname === slug;
 
-            {/* SERVICES Dropdown */}
-            <div className="group relative">
-              <button className="flex items-center whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300 group">
-                 <span>SERVICES</span>
-                <span className="ml-2 flex items-center transition-transform duration-300 group-hover:rotate-180">
-                  <ChevronDownIcon className="group-hover:hidden w-5 h-5"/>
-                  <ChevronUpIcon className="hidden group-hover:inline w-5 h-5"/>
-                </span>
-              </button>
-
-              {/* SERVICES Dropdown Group */}
-              <div className="absolute left-0 top-full z-10 hidden group-hover:flex flex-col bg-[#267b9a] shadow-md min-w-[280px] text-white">
-                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Programming SEO</Link>
-                <Link href="/services/generative" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Generative</Link>
-                <Link href="/services/link-building" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Link Building</Link>
-                <Link href="/services/ai-youtube" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">AI YouTube</Link>
-                <Link href="/services/ai-optimization" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Artificial Intelligence Optimization</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Rank Tracking</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Name, Adress, Places, MAPS, Directions - Listenings</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">GBP Reputation Management & Review Removal</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Schema / Structured Data / AI Rich Snippets</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">AI Content Development & Google Ranking</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Website Design And Development</Link>
-                <Link href="/services/rank-tracking" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Social Media Creative And Posting</Link>
-              </div>
-            </div>
-
-            {/* MEET THE TEAM Dropdown */}
-            <div className="group relative">
-               <button className="flex items-center whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300 group">
-                 <span>MEET THE TEAM</span>
-                <span className="ml-2 flex items-center transition-transform duration-300 group-hover:rotate-180">
-                  <ChevronDownIcon className="group-hover:hidden w-5 h-5"/>
-                  <ChevronUpIcon className="hidden group-hover:inline w-5 h-5"/>
-                </span>
-              </button>
-
-              {/* MEET THE TEAM Dropdown Group */}
-              <div className="absolute left-0 top-full z-10 hidden group-hover:flex flex-col bg-[#267b9a] shadow-md min-w-[280px] text-white">
-                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Review Us</Link>
-              </div>
-            </div>
-
-
-            {/* RESULTS Dropdown */}
-            <div className="group relative">
-               <button className="flex items-center whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300 group">
-                 <span>RESULTS</span>
-                <span className="ml-2 flex items-center transition-transform duration-300 group-hover:rotate-180">
-                  <ChevronDownIcon className="group-hover:hidden w-5 h-5"/>
-                  <ChevronUpIcon className="hidden group-hover:inline w-5 h-5"/>
-                </span>
-              </button>
-
-              {/* RESULTS Dropdown Group */}
-              <div className="absolute left-0 top-full z-10 hidden group-hover:flex flex-col bg-[#267b9a] shadow-md min-w-[280px] text-white">
-                <Link href="/services/programming-seo" className="whitespace-nowrap font-medium hover:bg-[#546259] hover:text-white p-3 border-b">Contact Us</Link>
-              </div>
-            </div>
-
-
-            <Link href="/confluence-ai" className="whitespace-nowrap text-[#546259] font-extrabold hover:bg-[#267b9a] hover:text-white p-4 transition-colors duration-300">CONFLUENCE AI</Link>
+              return (
+                <Link
+                  key={page.id}
+                  href={slug}
+                  className={`whitespace-nowrap font-extrabold p-4 transition-colors duration-300 ${
+                    isActive
+                      ? "bg-[#267b9a] text-white"
+                      : "text-[#546259] hover:bg-[#267b9a] hover:text-white"
+                  }`}
+                >
+                  {page.Title.toUpperCase()}
+                </Link>
+              );
+            })}
           </div>
-
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center">
@@ -119,10 +86,24 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden px-4 pb-4 space-y-2 font-bold">
-          <Link href="/" className="block hover:text-blue-500">Home</Link>
-          <Link href="/about" className="block hover:text-blue-500">About</Link>
-          <Link href="/services" className="block hover:text-blue-500">Services</Link>
-          <Link href="/contact" className="block hover:text-blue-500">Contact</Link>
+          {pages.map((page) => {
+            const slug = page.Slug === "home" ? "/" : `/${page.Slug}`;
+            const isActive = pathname === slug;
+
+            return (
+              <Link
+                key={page.id}
+                href={slug}
+                className={`block p-2 rounded-md ${
+                  isActive
+                    ? "bg-[#267b9a] text-white"
+                    : "text-[#546259] hover:bg-[#267b9a] hover:text-white"
+                }`}
+              >
+                {page.Title}
+              </Link>
+            );
+          })}
         </div>
       )}
     </nav>

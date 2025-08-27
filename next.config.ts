@@ -1,9 +1,20 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-   images: {
-    domains: ["irp.cdn-website.com"], // ✅ allow this domain
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+        pathname: "/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "irp.cdn-website.com",
+        pathname: "/**", // allow all images from this CDN
+      },
+    ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
