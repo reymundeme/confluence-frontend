@@ -120,7 +120,7 @@ export default function Navbar() {
                               )}
                             </Link>
 
-                            {/* Grandchild dropdown - ONLY shows on hover of this childs */}
+                            {/* Grandchild dropdown - ONLY shows on hover of this child */}
                             {grandChildren.length > 0 && (
                               <ul className="absolute left-full top-0 hidden group-hover/child:block bg-[#267b9a] shadow-lg w-88">
                                 {grandChildren.map((grandChild, gIndex) => (
