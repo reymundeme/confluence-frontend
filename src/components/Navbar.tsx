@@ -98,7 +98,7 @@ export default function Navbar() {
 
                   {/* Child dropdown */}
                   {children.length > 0 && (
-                    <ul className="absolute left-0 mt-2 text-white hidden group-hover:block bg-[#267b9a] shadow-lg w-64">
+                    <ul className="absolute left-0 mt-2 text-white hidden group-hover:block bg-[#267b9a] shadow-lg w-88">
                       {children.map((child, index) => {
                         const grandChildren = getGrandChildren(child.id);
                         return (
@@ -120,9 +120,9 @@ export default function Navbar() {
                               )}
                             </Link>
 
-                            {/* Grandchild dropdown - ONLY shows on hover of this child */}
+                            {/* Grandchild dropdown - ONLY shows on hover of this childs */}
                             {grandChildren.length > 0 && (
-                              <ul className="absolute left-full top-0 hidden group-hover/child:block bg-[#267b9a] shadow-lg w-64">
+                              <ul className="absolute left-full top-0 hidden group-hover/child:block bg-[#267b9a] shadow-lg w-88">
                                 {grandChildren.map((grandChild, gIndex) => (
                                   <li key={grandChild.id}>
                                     <Link
