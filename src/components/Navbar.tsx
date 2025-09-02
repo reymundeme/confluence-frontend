@@ -69,7 +69,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Menu Navbar*/}
+          {/* Desktop Menu*/}
           <div className="hidden lg:flex items-center space-x-6 relative">
             {pages.map((page) => {
               const slug = page.Slug === "home" ? "/" : `/${page.Slug}`;
